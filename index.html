@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+     <style>
+    /* Center everything on the page */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000000;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Make the image round */
+    .round-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px ;
+    }
+
+    /* Main container for content */
+    .content {
+      text-align: center;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    /* Container for all links - centered */
+    .links-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* This centers the links horizontally */
+      gap: 15px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    /* Style for all buttons */
+    .social-button {
+      background-color: #444544;
+      color: white;
+      padding: 12px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      box-shadow: #444544;
+      width: 100%; /* Buttons take full width of their container */
+      max-width: 250px; /* Buttons don't get too wide */
+      display: block;
+    }
+    
+    .social-button:hover {
+      background-color: #64bd1b;
+      box-shadow:  #64bd1b;
+    }
+    
+    .box {
+        width: 400px;
+        height: 600px;
+        min-height: 400px;
+        background-color: #282828;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        color: white;
+    }
+    
+    .location {
+      color: #64bd1b;
+      font-size: 90%;
+    }
+    
+    .description {
+      margin: 15px 0;
+      color: #8f928d;
+    }
+  </style>
+</head>
+<body>
+    <div class="box">
+      <div class="content">
+        <img src="avatar-jessica.jpeg" class="round-image" alt="Jessica">
+        <h1>Jessica Randall</h1>
+        <p class="location">London, United Kingdom</p>
+        <p class="description">"Front-end developer and avid reader"</p>
+        
+        <div class="links-container">
+          <a href="https://github.com/isorahmonov/iso" class="social-button">GitHub</a>
+          <a href="https://drive.google.com/file/d/1VewSmlwXqIHKO6I5TE5x-L0RZoNGLY0Z/view" class="social-button">Frontend Mentor</a>
+          <a href="https://www.linkedin.com/in/jessica-randall-123456789/" class="social-button">LinkedIn</a>
+          <a href="https://www.facebook.com/jessica.randall.123456/" class="social-button">Twitter</a>
+          <a href="https://www.instagram.com/jessica_randall/" class="social-button">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for all buttons -->
+    <script>
+        // Find all buttons
+        let buttons = document.querySelectorAll('.social-button');
+
+        // Add click event to each button
+        buttons.forEach(button => {
+            button.onclick = function(e) {
+                // Show confirmation question
+                let answer = confirm("Are you sure you want to visit " + button.textContent + "?");
+                
+                // Prevent default if user cancels
+                if (!answer) {
+                    e.preventDefault();
+                }
+            };
+        });
+    </script>
+</body>
+</html>
